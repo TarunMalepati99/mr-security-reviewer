@@ -1,0 +1,5 @@
+# Optional: Arize Phoenix tracing for --trace.
+# If this fails to install (e.g. "Failed building wheel" or a blocked build script on
+# Windows), use a Python 3.12 virtual environment, where prebuilt wheels exist.
+arize-phoenix
+openinference-instrumentation-langchain

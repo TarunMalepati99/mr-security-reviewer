@@ -1,0 +1,27 @@
+{
+  "id": "v10",
+  "title": "Role-based feature flag for admin export",
+  "author": "benchmark",
+  "note": "Authorization decided by a client-controlled header.",
+  "expected_gate": "warn",
+  "changed_files": [
+    {
+      "path": "api/export.py",
+      "diff": "+from flask import request, abort, send_file\n+\n+@app.route(\"/export/all-customers\")\n+def export_all_customers():\n+    if request.headers.get(\"X-User-Role\") != \"admin\":\n+        abort(403)\n+    return send_file(\"/data/exports/customers.csv\")\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "api/export.py",
+      "line": 5,
+      "span": [
+        3,
+        6
+      ],
+      "code": "if request.headers.get(\"X-User-Role\") != \"admin\":",
+      "category": "broken_access_control",
+      "severity": "high",
+      "optional": false
+    }
+  ]
+}

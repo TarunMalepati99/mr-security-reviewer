@@ -1,0 +1,888 @@
+{
+  "summary": {
+    "cases": 32,
+    "vulnerable_cases": 20,
+    "clean_cases": 12,
+    "labeled_issues": 26,
+    "true_positives": 12,
+    "false_positives": 7,
+    "precision": 0.632,
+    "recall": 0.462,
+    "f1": 0.533,
+    "right_rule_family_given_found": 1.0,
+    "per_category": {
+      "injection": {
+        "found": 5,
+        "total": 7
+      },
+      "hardcoded_secret": {
+        "found": 2,
+        "total": 5
+      },
+      "sensitive_logging": {
+        "found": 0,
+        "total": 3
+      },
+      "weak_crypto": {
+        "found": 3,
+        "total": 4
+      },
+      "insecure_transport": {
+        "found": 2,
+        "total": 3
+      },
+      "broken_access_control": {
+        "found": 0,
+        "total": 4
+      }
+    },
+    "vulnerable_mrs_flagged": 10,
+    "clean_mrs_false_alarm": 2,
+    "findings_on_removed_lines": 0,
+    "raw_candidate_findings": 20,
+    "dropped_as_hallucination": 0,
+    "analyzer": "bandit",
+    "model": "bandit",
+    "suite": "compliance",
+    "partial": false,
+    "cases_with_errors": 0,
+    "seconds": 0.2,
+    "gemini_calls": 0,
+    "gemini_cached": 0,
+    "per_class": null,
+    "seed": 7
+  },
+  "errors": [],
+  "cases": [
+    {
+      "id": "c01",
+      "title": "Parameterized customer search",
+      "expected_gate": "pass",
+      "gate": "pass",
+      "labels": [],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "c02",
+      "title": "Load secrets from environment",
+      "expected_gate": "pass",
+      "gate": "pass",
+      "labels": [],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "c03",
+      "title": "Masked card logging",
+      "expected_gate": "pass",
+      "gate": "pass",
+      "labels": [],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "c04",
+      "title": "Switch password hashing to bcrypt",
+      "expected_gate": "pass",
+      "gate": "pass",
+      "labels": [],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "c05",
+      "title": "Card processor client over TLS",
+      "expected_gate": "pass",
+      "gate": "pass",
+      "labels": [],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "c06",
+      "title": "Order lookup with ownership check",
+      "expected_gate": "pass",
+      "gate": "pass",
+      "labels": [],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "c07",
+      "title": "Upload checksums and secure reset tokens",
+      "expected_gate": "pass",
+      "gate": "pass",
+      "labels": [],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "c08",
+      "title": "Report export without shell",
+      "expected_gate": "pass",
+      "gate": "warn",
+      "labels": [],
+      "findings": [
+        {
+          "file": "reports/export.py",
+          "lines": [
+            2
+          ],
+          "rule_id": "BANDIT-B404",
+          "cwe": 78,
+          "severity": "low",
+          "evidence": "import subprocess",
+          "verdict": "FP",
+          "on_removed_line": false,
+          "category_correct": false
+        },
+        {
+          "file": "reports/export.py",
+          "lines": [
+            13
+          ],
+          "rule_id": "BANDIT-B607",
+          "cwe": 78,
+          "severity": "low",
+          "evidence": "subprocess.run([\"tar\", \"-czf\", \"/tmp/export.tgz\", f\"/data/reports/{name}\"], check=True)",
+          "verdict": "FP",
+          "on_removed_line": false,
+          "category_correct": false
+        },
+        {
+          "file": "reports/export.py",
+          "lines": [
+            13
+          ],
+          "rule_id": "BANDIT-B603",
+          "cwe": 78,
+          "severity": "low",
+          "evidence": "subprocess.run([\"tar\", \"-czf\", \"/tmp/export.tgz\", f\"/data/reports/{name}\"], check=True)",
+          "verdict": "FP",
+          "on_removed_line": false,
+          "category_correct": false
+        },
+        {
+          "file": "reports/export.py",
+          "lines": [
+            13
+          ],
+          "rule_id": "BANDIT-B108",
+          "cwe": 377,
+          "severity": "medium",
+          "evidence": "subprocess.run([\"tar\", \"-czf\", \"/tmp/export.tgz\", f\"/data/reports/{name}\"], check=True)",
+          "verdict": "FP",
+          "on_removed_line": false,
+          "category_correct": false
+        }
+      ],
+      "raw_findings": 4,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "c09",
+      "title": "Node order service (parameterized)",
+      "expected_gate": "pass",
+      "gate": "pass",
+      "labels": [],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "c10",
+      "title": "Refactor order service logging",
+      "expected_gate": "pass",
+      "gate": "pass",
+      "labels": [],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "c11",
+      "title": "Local dev docker-compose health check",
+      "expected_gate": "pass",
+      "gate": "warn",
+      "labels": [],
+      "findings": [
+        {
+          "file": "scripts/healthcheck.py",
+          "lines": [
+            6
+          ],
+          "rule_id": "BANDIT-B310",
+          "cwe": 22,
+          "severity": "medium",
+          "evidence": "urllib.request.urlopen(\"http://localhost:8080/healthz\", timeout=2)",
+          "verdict": "FP",
+          "on_removed_line": false,
+          "category_correct": false
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "c12",
+      "title": "Admin endpoint with role check from session",
+      "expected_gate": "pass",
+      "gate": "pass",
+      "labels": [],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v01",
+      "title": "Payment lookup endpoint and charge logging",
+      "expected_gate": "block",
+      "gate": "warn",
+      "labels": [
+        {
+          "file": "payments/lookup.py",
+          "line": 9,
+          "category": "injection",
+          "optional": false,
+          "code": "cur.execute(f\"SELECT * FROM payments WHERE id = '{payment_id}'\")",
+          "found": true
+        },
+        {
+          "file": "payments/lookup.py",
+          "line": 13,
+          "category": "sensitive_logging",
+          "optional": false,
+          "code": "logger.info(\"charged pan=%s amount=%s\", pan, amount)",
+          "found": false
+        }
+      ],
+      "findings": [
+        {
+          "file": "payments/lookup.py",
+          "lines": [
+            9
+          ],
+          "rule_id": "BANDIT-B608",
+          "cwe": 89,
+          "severity": "medium",
+          "evidence": "cur.execute(f\"SELECT * FROM payments WHERE id = '{payment_id}'\")",
+          "verdict": "TP",
+          "on_removed_line": false,
+          "category_correct": true
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v02",
+      "title": "Customer search by email",
+      "expected_gate": "block",
+      "gate": "warn",
+      "labels": [
+        {
+          "file": "customers/search.py",
+          "line": 2,
+          "category": "injection",
+          "optional": false,
+          "code": "sql = \"SELECT id, name FROM customers WHERE email = '%s'\" % email",
+          "found": true
+        }
+      ],
+      "findings": [
+        {
+          "file": "customers/search.py",
+          "lines": [
+            2
+          ],
+          "rule_id": "BANDIT-B608",
+          "cwe": 89,
+          "severity": "medium",
+          "evidence": "sql = \"SELECT id, name FROM customers WHERE email = '%s'\" % email",
+          "verdict": "TP",
+          "on_removed_line": false,
+          "category_correct": true
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v03",
+      "title": "Report export via shell",
+      "expected_gate": "block",
+      "gate": "block",
+      "labels": [
+        {
+          "file": "reports/export.py",
+          "line": 6,
+          "category": "injection",
+          "optional": false,
+          "code": "os.system(\"tar -czf /tmp/export.tgz /data/reports/\" + name)",
+          "found": true
+        }
+      ],
+      "findings": [
+        {
+          "file": "reports/export.py",
+          "lines": [
+            6
+          ],
+          "rule_id": "BANDIT-B605",
+          "cwe": 78,
+          "severity": "high",
+          "evidence": "os.system(\"tar -czf /tmp/export.tgz /data/reports/\" + name)",
+          "verdict": "TP",
+          "on_removed_line": false,
+          "category_correct": true
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v04",
+      "title": "Add production settings",
+      "expected_gate": "block",
+      "gate": "pass",
+      "labels": [
+        {
+          "file": "config/settings.py",
+          "line": 2,
+          "category": "hardcoded_secret",
+          "optional": false,
+          "code": "AWS_SECRET_ACCESS_KEY = \"wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY\"",
+          "found": true
+        },
+        {
+          "file": "config/settings.py",
+          "line": 3,
+          "category": "hardcoded_secret",
+          "optional": false,
+          "code": "DATABASE_URL = \"postgresql://admin:Sup3rS3cret!@prod-db.internal:5432/payments\"",
+          "found": false
+        },
+        {
+          "file": "config/settings.py",
+          "line": 1,
+          "category": "hardcoded_secret",
+          "optional": true,
+          "code": "AWS_ACCESS_KEY_ID = \"AKIAIOSFODNN7EXAMPLE\"",
+          "found": false
+        }
+      ],
+      "findings": [
+        {
+          "file": "config/settings.py",
+          "lines": [
+            2
+          ],
+          "rule_id": "BANDIT-B105",
+          "cwe": 259,
+          "severity": "low",
+          "evidence": "AWS_SECRET_ACCESS_KEY = \"wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY\"",
+          "verdict": "TP",
+          "on_removed_line": false,
+          "category_correct": true
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v05",
+      "title": "JWT session tokens",
+      "expected_gate": "block",
+      "gate": "pass",
+      "labels": [
+        {
+          "file": "auth/tokens.py",
+          "line": 4,
+          "category": "hardcoded_secret",
+          "optional": false,
+          "code": "JWT_SIGNING_KEY = \"my-very-secret-signing-key-2024\"",
+          "found": false
+        }
+      ],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v06",
+      "title": "Password reset flow",
+      "expected_gate": "block",
+      "gate": "pass",
+      "labels": [
+        {
+          "file": "auth/reset.py",
+          "line": 7,
+          "category": "weak_crypto",
+          "optional": false,
+          "code": "token = str(random.randint(100000, 999999))",
+          "found": true
+        },
+        {
+          "file": "auth/reset.py",
+          "line": 9,
+          "category": "sensitive_logging",
+          "optional": false,
+          "code": "log.info(f\"reset token for {user.email}: {token}\")",
+          "found": false
+        }
+      ],
+      "findings": [
+        {
+          "file": "auth/reset.py",
+          "lines": [
+            7
+          ],
+          "rule_id": "BANDIT-B311",
+          "cwe": 330,
+          "severity": "low",
+          "evidence": "token = str(random.randint(100000, 999999))",
+          "verdict": "TP",
+          "on_removed_line": false,
+          "category_correct": true
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v07",
+      "title": "New card processor client",
+      "expected_gate": "warn",
+      "gate": "block",
+      "labels": [
+        {
+          "file": "payments/processor.py",
+          "line": 10,
+          "category": "insecure_transport",
+          "optional": false,
+          "code": "verify=False,",
+          "found": true
+        }
+      ],
+      "findings": [
+        {
+          "file": "payments/processor.py",
+          "lines": [
+            10
+          ],
+          "rule_id": "BANDIT-B501",
+          "cwe": 295,
+          "severity": "high",
+          "evidence": "verify=False,",
+          "verdict": "TP",
+          "on_removed_line": false,
+          "category_correct": true
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v08",
+      "title": "Refund endpoint",
+      "expected_gate": "warn",
+      "gate": "pass",
+      "labels": [
+        {
+          "file": "api/refunds.py",
+          "line": 9,
+          "category": "broken_access_control",
+          "optional": false,
+          "code": "order = Order.query.get(order_id)",
+          "found": false
+        }
+      ],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v09",
+      "title": "Admin user deletion",
+      "expected_gate": "warn",
+      "gate": "pass",
+      "labels": [
+        {
+          "file": "api/admin.py",
+          "line": 4,
+          "category": "broken_access_control",
+          "optional": false,
+          "code": "@app.route(\"/admin/users/delete\", methods=[\"POST\"])",
+          "found": false
+        }
+      ],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v10",
+      "title": "Role-based feature flag for admin export",
+      "expected_gate": "warn",
+      "gate": "pass",
+      "labels": [
+        {
+          "file": "api/export.py",
+          "line": 5,
+          "category": "broken_access_control",
+          "optional": false,
+          "code": "if request.headers.get(\"X-User-Role\") != \"admin\":",
+          "found": false
+        }
+      ],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v11",
+      "title": "Expression calculator endpoint",
+      "expected_gate": "block",
+      "gate": "warn",
+      "labels": [
+        {
+          "file": "api/calc.py",
+          "line": 7,
+          "category": "injection",
+          "optional": false,
+          "code": "return jsonify({\"result\": eval(expr)})",
+          "found": true
+        }
+      ],
+      "findings": [
+        {
+          "file": "api/calc.py",
+          "lines": [
+            7
+          ],
+          "rule_id": "BANDIT-B307",
+          "cwe": 95,
+          "severity": "medium",
+          "evidence": "return jsonify({\"result\": eval(expr)})",
+          "verdict": "TP",
+          "on_removed_line": false,
+          "category_correct": true
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v12",
+      "title": "Legacy account migration",
+      "expected_gate": "warn",
+      "gate": "block",
+      "labels": [
+        {
+          "file": "accounts/migrate.py",
+          "line": 4,
+          "category": "weak_crypto",
+          "optional": false,
+          "code": "pw_hash = hashlib.sha1(old_user.password.encode()).hexdigest()",
+          "found": true
+        }
+      ],
+      "findings": [
+        {
+          "file": "accounts/migrate.py",
+          "lines": [
+            4
+          ],
+          "rule_id": "BANDIT-B324",
+          "cwe": 328,
+          "severity": "high",
+          "evidence": "pw_hash = hashlib.sha1(old_user.password.encode()).hexdigest()",
+          "verdict": "TP",
+          "on_removed_line": false,
+          "category_correct": true
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v13",
+      "title": "Encrypt stored card numbers",
+      "expected_gate": "warn",
+      "gate": "block",
+      "labels": [
+        {
+          "file": "vault/cards.py",
+          "line": 7,
+          "category": "weak_crypto",
+          "optional": false,
+          "code": "cipher = AES.new(KEY, AES.MODE_ECB)",
+          "found": false
+        }
+      ],
+      "findings": [
+        {
+          "file": "vault/cards.py",
+          "lines": [
+            1
+          ],
+          "rule_id": "BANDIT-B413",
+          "cwe": 327,
+          "severity": "high",
+          "evidence": "from Crypto.Cipher import AES",
+          "verdict": "FP",
+          "on_removed_line": false,
+          "category_correct": false
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v14",
+      "title": "Node order service",
+      "expected_gate": "block",
+      "gate": "pass",
+      "labels": [
+        {
+          "file": "src/orders.js",
+          "line": 3,
+          "category": "hardcoded_secret",
+          "optional": false,
+          "code": "const stripe = require(\"stripe\")(\"sk_live_4eC39HqLyjWDarjtT1zdp7dc\");",
+          "found": false
+        },
+        {
+          "file": "src/orders.js",
+          "line": 8,
+          "category": "injection",
+          "optional": false,
+          "code": "const result = await pool.query(`SELECT * FROM orders WHERE id = ${req.params.id}`);",
+          "found": false
+        }
+      ],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v15",
+      "title": "Java merchant lookup",
+      "expected_gate": "block",
+      "gate": "pass",
+      "labels": [
+        {
+          "file": "src/main/java/com/shop/MerchantDao.java",
+          "line": 12,
+          "category": "injection",
+          "optional": false,
+          "code": "return stmt.executeQuery(\"SELECT * FROM merchants WHERE name = '\" + name + \"'\");",
+          "found": false
+        }
+      ],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v16",
+      "title": "Request logging middleware",
+      "expected_gate": "block",
+      "gate": "pass",
+      "labels": [
+        {
+          "file": "middleware/logging.py",
+          "line": 11,
+          "category": "sensitive_logging",
+          "optional": false,
+          "code": "logger.debug(\"request %s auth=%s\", environ.get(\"PATH_INFO\"), auth)",
+          "found": false
+        }
+      ],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v17",
+      "title": "Fix user lookup injection; add signup",
+      "expected_gate": "warn",
+      "gate": "block",
+      "labels": [
+        {
+          "file": "auth/signup.py",
+          "line": 4,
+          "category": "weak_crypto",
+          "optional": false,
+          "code": "digest = hashlib.md5(password.encode()).hexdigest()",
+          "found": true
+        }
+      ],
+      "findings": [
+        {
+          "file": "auth/signup.py",
+          "lines": [
+            4
+          ],
+          "rule_id": "BANDIT-B324",
+          "cwe": 328,
+          "severity": "high",
+          "evidence": "digest = hashlib.md5(password.encode()).hexdigest()",
+          "verdict": "TP",
+          "on_removed_line": false,
+          "category_correct": true
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v18",
+      "title": "Settlement webhook",
+      "expected_gate": "block",
+      "gate": "block",
+      "labels": [
+        {
+          "file": "webhooks/settlement.py",
+          "line": 5,
+          "category": "insecure_transport",
+          "optional": false,
+          "code": "CALLBACK = \"http://partner-bank.example.com/settlements\"",
+          "found": false
+        },
+        {
+          "file": "webhooks/settlement.py",
+          "line": 11,
+          "category": "injection",
+          "optional": false,
+          "code": "subprocess.run(f\"python scripts/reconcile.py {batch}\", shell=True)",
+          "found": true
+        }
+      ],
+      "findings": [
+        {
+          "file": "webhooks/settlement.py",
+          "lines": [
+            1
+          ],
+          "rule_id": "BANDIT-B404",
+          "cwe": 78,
+          "severity": "low",
+          "evidence": "import subprocess",
+          "verdict": "FP",
+          "on_removed_line": false,
+          "category_correct": false
+        },
+        {
+          "file": "webhooks/settlement.py",
+          "lines": [
+            11
+          ],
+          "rule_id": "BANDIT-B602",
+          "cwe": 78,
+          "severity": "high",
+          "evidence": "subprocess.run(f\"python scripts/reconcile.py {batch}\", shell=True)",
+          "verdict": "TP",
+          "on_removed_line": false,
+          "category_correct": true
+        }
+      ],
+      "raw_findings": 2,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v19",
+      "title": "Nightly settlement file upload",
+      "expected_gate": "block",
+      "gate": "block",
+      "labels": [
+        {
+          "file": "jobs/upload.py",
+          "line": 5,
+          "category": "hardcoded_secret",
+          "optional": false,
+          "code": "FTP_PASSWORD = \"Settle2024!\"",
+          "found": true
+        },
+        {
+          "file": "jobs/upload.py",
+          "line": 8,
+          "category": "insecure_transport",
+          "optional": false,
+          "code": "with FTP(FTP_HOST) as ftp:",
+          "found": true
+        }
+      ],
+      "findings": [
+        {
+          "file": "jobs/upload.py",
+          "lines": [
+            1
+          ],
+          "rule_id": "BANDIT-B402",
+          "cwe": 319,
+          "severity": "high",
+          "evidence": "from ftplib import FTP",
+          "verdict": "TP",
+          "on_removed_line": false,
+          "category_correct": true
+        },
+        {
+          "file": "jobs/upload.py",
+          "lines": [
+            5
+          ],
+          "rule_id": "BANDIT-B105",
+          "cwe": 259,
+          "severity": "low",
+          "evidence": "FTP_PASSWORD = \"Settle2024!\"",
+          "verdict": "TP",
+          "on_removed_line": false,
+          "category_correct": true
+        },
+        {
+          "file": "jobs/upload.py",
+          "lines": [
+            8
+          ],
+          "rule_id": "BANDIT-B321",
+          "cwe": 319,
+          "severity": "high",
+          "evidence": "with FTP(FTP_HOST) as ftp:",
+          "verdict": "DUP",
+          "on_removed_line": false,
+          "category_correct": true
+        }
+      ],
+      "raw_findings": 3,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "v20",
+      "title": "Account statements API",
+      "expected_gate": "warn",
+      "gate": "pass",
+      "labels": [
+        {
+          "file": "api/statements.py",
+          "line": 4,
+          "category": "broken_access_control",
+          "optional": false,
+          "code": "@app.route(\"/accounts/<account_id>/statements\")",
+          "found": false
+        }
+      ],
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    }
+  ]
+}

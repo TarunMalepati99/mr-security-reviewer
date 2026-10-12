@@ -1,0 +1,27 @@
+{
+  "id": "v02",
+  "title": "Customer search by email",
+  "author": "benchmark",
+  "note": "SQL built with % string formatting.",
+  "expected_gate": "block",
+  "changed_files": [
+    {
+      "path": "customers/search.py",
+      "diff": "+def search_customers(conn, email):\n+    sql = \"SELECT id, name FROM customers WHERE email = '%s'\" % email\n+    return conn.execute(sql).fetchall()\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "customers/search.py",
+      "line": 2,
+      "span": [
+        2,
+        3
+      ],
+      "code": "sql = \"SELECT id, name FROM customers WHERE email = '%s'\" % email",
+      "category": "injection",
+      "severity": "critical",
+      "optional": false
+    }
+  ]
+}

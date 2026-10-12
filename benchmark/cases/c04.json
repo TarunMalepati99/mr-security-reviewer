@@ -1,0 +1,14 @@
+{
+  "id": "c04",
+  "title": "Switch password hashing to bcrypt",
+  "author": "benchmark",
+  "note": "Safe: bcrypt with salt.",
+  "expected_gate": "pass",
+  "changed_files": [
+    {
+      "path": "auth/passwords.py",
+      "diff": "+import bcrypt\n+\n+def hash_password(password: str) -> bytes:\n+    return bcrypt.hashpw(password.encode(), bcrypt.gensalt(rounds=12))\n+\n+def check_password(password: str, hashed: bytes) -> bool:\n+    return bcrypt.checkpw(password.encode(), hashed)\n"
+    }
+  ],
+  "labels": []
+}

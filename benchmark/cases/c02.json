@@ -1,0 +1,14 @@
+{
+  "id": "c02",
+  "title": "Load secrets from environment",
+  "author": "benchmark",
+  "note": "Safe: secrets come from the environment (names look scary, values don't exist).",
+  "expected_gate": "pass",
+  "changed_files": [
+    {
+      "path": "config/settings.py",
+      "diff": "+import os\n+\n+STRIPE_API_KEY = os.environ[\"STRIPE_API_KEY\"]\n+DATABASE_URL = os.environ.get(\"DATABASE_URL\")\n+JWT_SIGNING_KEY = os.environ[\"JWT_SIGNING_KEY\"]\n"
+    }
+  ],
+  "labels": []
+}

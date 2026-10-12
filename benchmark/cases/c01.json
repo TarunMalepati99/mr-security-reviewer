@@ -1,0 +1,14 @@
+{
+  "id": "c01",
+  "title": "Parameterized customer search",
+  "author": "benchmark",
+  "note": "Safe: parameterized query.",
+  "expected_gate": "pass",
+  "changed_files": [
+    {
+      "path": "customers/search.py",
+      "diff": "+def search_customers(conn, email):\n+    cur = conn.cursor()\n+    cur.execute(\"SELECT id, name FROM customers WHERE email = %s\", (email,))\n+    return cur.fetchall()\n"
+    }
+  ],
+  "labels": []
+}

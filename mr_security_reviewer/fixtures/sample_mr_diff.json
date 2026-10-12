@@ -1,0 +1,18 @@
+{
+  "title": "Add checkout flow, order lookup endpoint, and legacy user migration",
+  "author": "dev-jsmith",
+  "changed_files": [
+    {
+      "path": "payment/checkout.py",
+      "diff": "+import requests\n+\n+STRIPE_API_KEY = \"sk_live_51Hxyz0000000000000000000000\"\n+\n+def charge_card(card_number, cvv, amount):\n+    print(f\"Charging card_number={card_number} cvv={cvv} amount={amount}\")\n+    resp = requests.post(\"http://payments.internal.example.com/charge\", json={\n+        \"card_number\": card_number,\n+        \"cvv\": cvv,\n+        \"amount\": amount,\n+        \"api_key\": STRIPE_API_KEY,\n+    })\n+    return resp.json()\n"
+    },
+    {
+      "path": "auth/db.py",
+      "diff": "+import hashlib\n+import sqlite3\n+\n+def hash_password(password):\n+    return hashlib.md5(password.encode()).hexdigest()\n+\n+def get_user_by_id(conn, user_id):\n+    cursor = conn.cursor()\n+    query = \"SELECT * FROM users WHERE id = \" + user_id\n+    cursor.execute(query)\n+    return cursor.fetchone()\n"
+    },
+    {
+      "path": "api/routes.py",
+      "diff": "+@app.route(\"/orders/<order_id>\", methods=[\"GET\"])\n+def get_order(order_id):\n+    customer_id = request.args.get(\"customer_id\")\n+    order = db.lookup_order(order_id, customer_id)\n+    return jsonify(order)\n+\n+@app.route(\"/admin/users\", methods=[\"GET\"])\n+@login_required\n+def list_users():\n+    role_filter = request.args.get(\"role\")\n+    return jsonify(db.all_users(role_filter))\n"
+    }
+  ]
+}

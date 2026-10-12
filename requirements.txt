@@ -1,0 +1,13 @@
+# Core -- everything needed to run the reviewer and the benchmark
+langgraph>=0.2.0
+requests>=2.31.0
+google-genai>=1.0.0      # Gemini SDK (replaces the deprecated google-generativeai)
+
+# Benchmark baseline (classic static analyzer to compare against)
+bandit>=1.7.0
+
+# Dev/test
+pytest>=7.4.0
+
+# Optional tracing lives in requirements-trace.txt: arize-phoenix currently pulls in
+# packages that must be compiled from source on some Windows/Python combinations.

@@ -1,0 +1,39 @@
+{
+  "id": "v06",
+  "title": "Password reset flow",
+  "author": "benchmark",
+  "note": "Non-cryptographic RNG for a security token, and the token is logged.",
+  "expected_gate": "block",
+  "changed_files": [
+    {
+      "path": "auth/reset.py",
+      "diff": "+import random\n+import logging\n+\n+log = logging.getLogger(\"auth\")\n+\n+def create_reset_token(user):\n+    token = str(random.randint(100000, 999999))\n+    user.reset_token = token\n+    log.info(f\"reset token for {user.email}: {token}\")\n+    return token\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "auth/reset.py",
+      "line": 7,
+      "span": [
+        7,
+        7
+      ],
+      "code": "token = str(random.randint(100000, 999999))",
+      "category": "weak_crypto",
+      "severity": "high",
+      "optional": false
+    },
+    {
+      "file": "auth/reset.py",
+      "line": 9,
+      "span": [
+        9,
+        9
+      ],
+      "code": "log.info(f\"reset token for {user.email}: {token}\")",
+      "category": "sensitive_logging",
+      "severity": "critical",
+      "optional": false
+    }
+  ]
+}

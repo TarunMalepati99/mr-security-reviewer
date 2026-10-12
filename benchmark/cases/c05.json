@@ -1,0 +1,14 @@
+{
+  "id": "c05",
+  "title": "Card processor client over TLS",
+  "author": "benchmark",
+  "note": "Safe: HTTPS with default certificate verification; key from env.",
+  "expected_gate": "pass",
+  "changed_files": [
+    {
+      "path": "payments/processor.py",
+      "diff": "+import os\n+import requests\n+\n+PROCESSOR_URL = \"https://api.card-processor.example.com/v2/charge\"\n+\n+def charge(card_token, amount_cents):\n+    resp = requests.post(\n+        PROCESSOR_URL,\n+        json={\"token\": card_token, \"amount\": amount_cents},\n+        headers={\"Authorization\": f\"Bearer {os.environ['PROCESSOR_KEY']}\"},\n+        timeout=10,\n+    )\n+    resp.raise_for_status()\n+    return resp.json()\n"
+    }
+  ],
+  "labels": []
+}

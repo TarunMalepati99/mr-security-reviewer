@@ -1,0 +1,31 @@
+{
+  "id": "v17",
+  "title": "Fix user lookup injection; add signup",
+  "author": "benchmark",
+  "note": "Mixed MR: the injection is being REMOVED (flagging the '-' line is a false positive); the new signup file adds MD5 password hashing.",
+  "expected_gate": "warn",
+  "changed_files": [
+    {
+      "path": "auth/db.py",
+      "diff": " def get_user_by_id(conn, user_id):\n     cursor = conn.cursor()\n-    query = \"SELECT * FROM users WHERE id = \" + user_id\n-    cursor.execute(query)\n+    cursor.execute(\"SELECT * FROM users WHERE id = %s\", (user_id,))\n     return cursor.fetchone()\n"
+    },
+    {
+      "path": "auth/signup.py",
+      "diff": "+import hashlib\n+\n+def create_user(store, email, password):\n+    digest = hashlib.md5(password.encode()).hexdigest()\n+    store.insert(email=email, password_hash=digest)\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "auth/signup.py",
+      "line": 4,
+      "span": [
+        4,
+        4
+      ],
+      "code": "digest = hashlib.md5(password.encode()).hexdigest()",
+      "category": "weak_crypto",
+      "severity": "high",
+      "optional": false
+    }
+  ]
+}

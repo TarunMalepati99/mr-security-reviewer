@@ -1,0 +1,14 @@
+{
+  "id": "c10",
+  "title": "Refactor order service logging",
+  "author": "benchmark",
+  "note": "Safe: refactor; logs only order id and item count.",
+  "expected_gate": "pass",
+  "changed_files": [
+    {
+      "path": "orders/service.py",
+      "diff": " import logging\n\n logger = logging.getLogger(__name__)\n\n-def create(o):\n-    logger.info(\"created\")\n-    return o\n+def create_order(order) -> \"Order\":\n+    logger.info(\"order %s created for %d items\", order.id, len(order.items))\n+    return order\n"
+    }
+  ],
+  "labels": []
+}

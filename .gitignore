@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.pytest_cache/
+*.egg-info/
+benchmark/.cache/
+
+# keep only the final benchmark runs; early/failed exploratory runs stay local
+benchmark/results/owasp_gemini_*
+benchmark/results/stub_*
+benchmark/results/owasp_bandit_20261012_161353.*
+benchmark/results/owasp_bandit_20261012_161359.*

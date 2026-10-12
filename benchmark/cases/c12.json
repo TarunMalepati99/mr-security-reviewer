@@ -1,0 +1,14 @@
+{
+  "id": "c12",
+  "title": "Admin endpoint with role check from session",
+  "author": "benchmark",
+  "note": "Safe: authenticated + server-side role check.",
+  "expected_gate": "pass",
+  "changed_files": [
+    {
+      "path": "api/admin.py",
+      "diff": "+from flask import request, jsonify, abort\n+from flask_login import login_required, current_user\n+from models import User, db\n+\n+@app.route(\"/admin/users/delete\", methods=[\"POST\"])\n+@login_required\n+def delete_user():\n+    if not current_user.has_role(\"admin\"):\n+        abort(403)\n+    user_id = request.json[\"user_id\"]\n+    User.query.filter_by(id=user_id).delete()\n+    db.session.commit()\n+    return jsonify({\"deleted\": user_id})\n"
+    }
+  ],
+  "labels": []
+}

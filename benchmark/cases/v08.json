@@ -1,0 +1,27 @@
+{
+  "id": "v08",
+  "title": "Refund endpoint",
+  "author": "benchmark",
+  "note": "Authenticated but no ownership check: any logged-in user can refund any order (IDOR). Has @login_required, so naive auth heuristics pass it.",
+  "expected_gate": "warn",
+  "changed_files": [
+    {
+      "path": "api/refunds.py",
+      "diff": "+from flask import request, jsonify\n+from flask_login import login_required, current_user\n+from models import Order\n+\n+@app.route(\"/refunds\", methods=[\"POST\"])\n+@login_required\n+def create_refund():\n+    order_id = request.json[\"order_id\"]\n+    order = Order.query.get(order_id)\n+    order.refund()\n+    return jsonify({\"status\": \"refunded\", \"order\": order_id})\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "api/refunds.py",
+      "line": 9,
+      "span": [
+        5,
+        11
+      ],
+      "code": "order = Order.query.get(order_id)",
+      "category": "broken_access_control",
+      "severity": "high",
+      "optional": false
+    }
+  ]
+}

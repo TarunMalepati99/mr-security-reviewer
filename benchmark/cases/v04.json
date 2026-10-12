@@ -1,0 +1,51 @@
+{
+  "id": "v04",
+  "title": "Add production settings",
+  "author": "benchmark",
+  "note": "Cloud secret key and DB password embedded in a URL. The access key ID line is optional: flagging it is fine, missing it is not penalized.",
+  "expected_gate": "block",
+  "changed_files": [
+    {
+      "path": "config/settings.py",
+      "diff": "+AWS_ACCESS_KEY_ID = \"AKIAIOSFODNN7EXAMPLE\"\n+AWS_SECRET_ACCESS_KEY = \"wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY\"\n+DATABASE_URL = \"postgresql://admin:Sup3rS3cret!@prod-db.internal:5432/payments\"\n+DEBUG = False\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "config/settings.py",
+      "line": 2,
+      "span": [
+        2,
+        2
+      ],
+      "code": "AWS_SECRET_ACCESS_KEY = \"wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY\"",
+      "category": "hardcoded_secret",
+      "severity": "critical",
+      "optional": false
+    },
+    {
+      "file": "config/settings.py",
+      "line": 3,
+      "span": [
+        3,
+        3
+      ],
+      "code": "DATABASE_URL = \"postgresql://admin:Sup3rS3cret!@prod-db.internal:5432/payments\"",
+      "category": "hardcoded_secret",
+      "severity": "critical",
+      "optional": false
+    },
+    {
+      "file": "config/settings.py",
+      "line": 1,
+      "span": [
+        1,
+        1
+      ],
+      "code": "AWS_ACCESS_KEY_ID = \"AKIAIOSFODNN7EXAMPLE\"",
+      "category": "hardcoded_secret",
+      "severity": "critical",
+      "optional": true
+    }
+  ]
+}

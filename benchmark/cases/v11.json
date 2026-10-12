@@ -1,0 +1,27 @@
+{
+  "id": "v11",
+  "title": "Expression calculator endpoint",
+  "author": "benchmark",
+  "note": "Code injection via eval on user input.",
+  "expected_gate": "block",
+  "changed_files": [
+    {
+      "path": "api/calc.py",
+      "diff": "+from flask import request, jsonify\n+\n+@app.route(\"/calc\")\n+@login_required\n+def calc():\n+    expr = request.args.get(\"expr\", \"0\")\n+    return jsonify({\"result\": eval(expr)})\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "api/calc.py",
+      "line": 7,
+      "span": [
+        6,
+        7
+      ],
+      "code": "return jsonify({\"result\": eval(expr)})",
+      "category": "injection",
+      "severity": "critical",
+      "optional": false
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+[
+  {
+    "rule_id": "SOC2-CC6.1",
+    "title": "Logical access controls restrict unauthorized access",
+    "keywords": [
+      "route",
+      "endpoint",
+      "auth",
+      "login",
+      "session",
+      "request.",
+      "@app.route",
+      "permission"
+    ],
+    "text": "The entity implements logical access security software, infrastructure, and architectures to protect information assets from unauthorized access, including authentication and authorization checks on every entry point.",
+    "cwe": [
+      284,
+      285,
+      862,
+      863,
+      639
+    ]
+  },
+  {
+    "rule_id": "SOC2-CC6.6",
+    "title": "Restrict access via encryption and boundary protections",
+    "keywords": [
+      "http://",
+      "encrypt",
+      "tls",
+      "ssl",
+      "boundary"
+    ],
+    "text": "The entity implements boundary protection systems and encrypts sensitive data to restrict unauthorized access to system resources and data in transit.",
+    "cwe": [
+      319,
+      295
+    ]
+  },
+  {
+    "rule_id": "SOC2-CC7.2",
+    "title": "Monitor system components for anomalies",
+    "keywords": [
+      "log",
+      "logger",
+      "monitor",
+      "audit"
+    ],
+    "text": "The entity monitors system components for anomalies indicative of security events, and logging must not itself leak sensitive data such as credentials or cardholder data.",
+    "cwe": [
+      532,
+      778
+    ]
+  },
+  {
+    "rule_id": "SOC2-CC6.7",
+    "title": "Restrict transmission, movement, and removal of information",
+    "keywords": [
+      "password",
+      "secret",
+      "token",
+      "credential",
+      "hardcode"
+    ],
+    "text": "The entity restricts the transmission, movement, and removal of information to authorized users and processes; secrets must be sourced from a managed store, not hardcoded.",
+    "cwe": [
+      798,
+      259
+    ]
+  }
+]

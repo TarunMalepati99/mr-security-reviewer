@@ -1,0 +1,18 @@
+{
+  "id": "c07",
+  "title": "Upload checksums and secure reset tokens",
+  "author": "benchmark",
+  "note": "Safe: SHA-256 used for file integrity (not passwords); secrets module for tokens.",
+  "expected_gate": "pass",
+  "changed_files": [
+    {
+      "path": "files/checksum.py",
+      "diff": "+import hashlib\n+\n+def file_sha256(path):\n+    h = hashlib.sha256()\n+    with open(path, \"rb\") as f:\n+        for chunk in iter(lambda: f.read(8192), b\"\"):\n+            h.update(chunk)\n+    return h.hexdigest()\n"
+    },
+    {
+      "path": "auth/reset.py",
+      "diff": "+import secrets\n+\n+def create_reset_token(user):\n+    user.reset_token = secrets.token_urlsafe(32)\n+    return user.reset_token\n"
+    }
+  ],
+  "labels": []
+}

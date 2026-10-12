@@ -1,0 +1,27 @@
+{
+  "id": "v15",
+  "title": "Java merchant lookup",
+  "author": "benchmark",
+  "note": "Java: string-concatenated JDBC query.",
+  "expected_gate": "block",
+  "changed_files": [
+    {
+      "path": "src/main/java/com/shop/MerchantDao.java",
+      "diff": "+package com.shop;\n+\n+import java.sql.*;\n+\n+public class MerchantDao {\n+    private final Connection conn;\n+\n+    public MerchantDao(Connection conn) { this.conn = conn; }\n+\n+    public ResultSet findByName(String name) throws SQLException {\n+        Statement stmt = conn.createStatement();\n+        return stmt.executeQuery(\"SELECT * FROM merchants WHERE name = '\" + name + \"'\");\n+    }\n+}\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "src/main/java/com/shop/MerchantDao.java",
+      "line": 12,
+      "span": [
+        11,
+        12
+      ],
+      "code": "return stmt.executeQuery(\"SELECT * FROM merchants WHERE name = '\" + name + \"'\");",
+      "category": "injection",
+      "severity": "critical",
+      "optional": false
+    }
+  ]
+}

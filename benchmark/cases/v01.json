@@ -1,0 +1,39 @@
+{
+  "id": "v01",
+  "title": "Payment lookup endpoint and charge logging",
+  "author": "benchmark",
+  "note": "f-string SQL (no '+' concatenation) and PAN logged through a logger, not print.",
+  "expected_gate": "block",
+  "changed_files": [
+    {
+      "path": "payments/lookup.py",
+      "diff": "+import logging\n+from db import get_conn\n+\n+logger = logging.getLogger(__name__)\n+\n+def find_payment(payment_id):\n+    conn = get_conn()\n+    cur = conn.cursor()\n+    cur.execute(f\"SELECT * FROM payments WHERE id = '{payment_id}'\")\n+    return cur.fetchone()\n+\n+def record_charge(pan, amount):\n+    logger.info(\"charged pan=%s amount=%s\", pan, amount)\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "payments/lookup.py",
+      "line": 9,
+      "span": [
+        9,
+        9
+      ],
+      "code": "cur.execute(f\"SELECT * FROM payments WHERE id = '{payment_id}'\")",
+      "category": "injection",
+      "severity": "critical",
+      "optional": false
+    },
+    {
+      "file": "payments/lookup.py",
+      "line": 13,
+      "span": [
+        13,
+        13
+      ],
+      "code": "logger.info(\"charged pan=%s amount=%s\", pan, amount)",
+      "category": "sensitive_logging",
+      "severity": "critical",
+      "optional": false
+    }
+  ]
+}

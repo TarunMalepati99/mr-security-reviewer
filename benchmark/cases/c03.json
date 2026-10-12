@@ -1,0 +1,14 @@
+{
+  "id": "c03",
+  "title": "Masked card logging",
+  "author": "benchmark",
+  "note": "Safe: only last four digits are logged.",
+  "expected_gate": "pass",
+  "changed_files": [
+    {
+      "path": "payments/audit.py",
+      "diff": "+import logging\n+\n+logger = logging.getLogger(__name__)\n+\n+def log_charge(card_number, amount):\n+    masked = \"*\" * 12 + card_number[-4:]\n+    logger.info(\"charged card=%s amount=%s\", masked, amount)\n"
+    }
+  ],
+  "labels": []
+}

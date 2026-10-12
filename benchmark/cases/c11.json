@@ -1,0 +1,14 @@
+{
+  "id": "c11",
+  "title": "Local dev docker-compose health check",
+  "author": "benchmark",
+  "note": "Safe (hard negative): plain HTTP only to localhost for a container health check, no sensitive data.",
+  "expected_gate": "pass",
+  "changed_files": [
+    {
+      "path": "scripts/healthcheck.py",
+      "diff": "+import sys\n+import urllib.request\n+\n+def main():\n+    try:\n+        urllib.request.urlopen(\"http://localhost:8080/healthz\", timeout=2)\n+    except Exception:\n+        sys.exit(1)\n+\n+if __name__ == \"__main__\":\n+    main()\n"
+    }
+  ],
+  "labels": []
+}

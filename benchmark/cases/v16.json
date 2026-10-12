@@ -1,0 +1,27 @@
+{
+  "id": "v16",
+  "title": "Request logging middleware",
+  "author": "benchmark",
+  "note": "Bearer tokens / credentials written to logs.",
+  "expected_gate": "block",
+  "changed_files": [
+    {
+      "path": "middleware/logging.py",
+      "diff": "+import logging\n+\n+logger = logging.getLogger(\"http\")\n+\n+class RequestLogger:\n+    def __init__(self, app):\n+        self.app = app\n+\n+    def __call__(self, environ, start_response):\n+        auth = environ.get(\"HTTP_AUTHORIZATION\")\n+        logger.debug(\"request %s auth=%s\", environ.get(\"PATH_INFO\"), auth)\n+        return self.app(environ, start_response)\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "middleware/logging.py",
+      "line": 11,
+      "span": [
+        10,
+        11
+      ],
+      "code": "logger.debug(\"request %s auth=%s\", environ.get(\"PATH_INFO\"), auth)",
+      "category": "sensitive_logging",
+      "severity": "critical",
+      "optional": false
+    }
+  ]
+}

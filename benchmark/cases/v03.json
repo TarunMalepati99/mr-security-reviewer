@@ -1,0 +1,27 @@
+{
+  "id": "v03",
+  "title": "Report export via shell",
+  "author": "benchmark",
+  "note": "Command injection via os.system with request input.",
+  "expected_gate": "block",
+  "changed_files": [
+    {
+      "path": "reports/export.py",
+      "diff": "+import os\n+from flask import request\n+\n+def export_report():\n+    name = request.args.get(\"name\")\n+    os.system(\"tar -czf /tmp/export.tgz /data/reports/\" + name)\n+    return \"ok\"\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "reports/export.py",
+      "line": 6,
+      "span": [
+        5,
+        6
+      ],
+      "code": "os.system(\"tar -czf /tmp/export.tgz /data/reports/\" + name)",
+      "category": "injection",
+      "severity": "critical",
+      "optional": false
+    }
+  ]
+}

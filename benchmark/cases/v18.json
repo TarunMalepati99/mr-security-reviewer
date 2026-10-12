@@ -1,0 +1,39 @@
+{
+  "id": "v18",
+  "title": "Settlement webhook",
+  "author": "benchmark",
+  "note": "Settlement data posted over plain HTTP; shell=True with request input.",
+  "expected_gate": "block",
+  "changed_files": [
+    {
+      "path": "webhooks/settlement.py",
+      "diff": "+import subprocess\n+import requests\n+from flask import request\n+\n+CALLBACK = \"http://partner-bank.example.com/settlements\"\n+\n+@app.route(\"/webhooks/settlement\", methods=[\"POST\"])\n+@token_required\n+def settlement():\n+    batch = request.json[\"batch_id\"]\n+    subprocess.run(f\"python scripts/reconcile.py {batch}\", shell=True)\n+    requests.post(CALLBACK, json=request.json, timeout=5)\n+    return \"\", 204\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "webhooks/settlement.py",
+      "line": 5,
+      "span": [
+        5,
+        12
+      ],
+      "code": "CALLBACK = \"http://partner-bank.example.com/settlements\"",
+      "category": "insecure_transport",
+      "severity": "high",
+      "optional": false
+    },
+    {
+      "file": "webhooks/settlement.py",
+      "line": 11,
+      "span": [
+        10,
+        11
+      ],
+      "code": "subprocess.run(f\"python scripts/reconcile.py {batch}\", shell=True)",
+      "category": "injection",
+      "severity": "critical",
+      "optional": false
+    }
+  ]
+}

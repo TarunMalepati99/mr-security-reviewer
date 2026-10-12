@@ -1,0 +1,74 @@
+[
+  {
+    "rule_id": "PCI-DSS-3.3",
+    "title": "Mask/never log full cardholder data",
+    "keywords": [
+      "card",
+      "cvv",
+      "pan",
+      "cardholder",
+      "credit_card",
+      "card_number"
+    ],
+    "text": "Mask PAN when displayed and render it unreadable anywhere it is stored, including logs, debug output, and error messages. Full card numbers and CVV/CVC values must never appear in application logs.",
+    "cwe": [
+      532,
+      312,
+      359
+    ]
+  },
+  {
+    "rule_id": "PCI-DSS-3.4",
+    "title": "Protect stored authentication credentials",
+    "keywords": [
+      "password",
+      "secret",
+      "api_key",
+      "apikey",
+      "token",
+      "credential"
+    ],
+    "text": "Render stored authentication credentials (passwords, API keys, tokens) unreadable using strong cryptography. Credentials must never be hardcoded in source code or committed to version control.",
+    "cwe": [
+      798,
+      259,
+      312
+    ]
+  },
+  {
+    "rule_id": "PCI-DSS-4.1",
+    "title": "Encrypt transmission of cardholder data across open, public networks",
+    "keywords": [
+      "http://",
+      "ssl",
+      "tls",
+      "transmit",
+      "payment",
+      "checkout"
+    ],
+    "text": "Use strong cryptography (TLS 1.2+) to safeguard cardholder data during transmission over open, public networks. Plaintext HTTP must never be used for payment-related traffic.",
+    "cwe": [
+      319,
+      295
+    ]
+  },
+  {
+    "rule_id": "PCI-DSS-6.5",
+    "title": "Address common coding vulnerabilities in software-development processes",
+    "keywords": [
+      "sql",
+      "query",
+      "injection",
+      "eval",
+      "exec",
+      "input"
+    ],
+    "text": "Develop applications based on secure coding guidelines to prevent common vulnerabilities, including injection flaws, in software development processes.",
+    "cwe": [
+      89,
+      78,
+      79,
+      94
+    ]
+  }
+]

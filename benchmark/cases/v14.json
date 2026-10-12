@@ -1,0 +1,39 @@
+{
+  "id": "v14",
+  "title": "Node order service",
+  "author": "benchmark",
+  "note": "JavaScript: hardcoded live Stripe key and template-literal SQL.",
+  "expected_gate": "block",
+  "changed_files": [
+    {
+      "path": "src/orders.js",
+      "diff": "+const express = require(\"express\");\n+const { pool } = require(\"./db\");\n+const stripe = require(\"stripe\")(\"sk_live_4eC39HqLyjWDarjtT1zdp7dc\");\n+\n+const router = express.Router();\n+\n+router.get(\"/orders/:id\", async (req, res) => {\n+  const result = await pool.query(`SELECT * FROM orders WHERE id = ${req.params.id}`);\n+  res.json(result.rows[0]);\n+});\n+\n+module.exports = router;\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "src/orders.js",
+      "line": 3,
+      "span": [
+        3,
+        3
+      ],
+      "code": "const stripe = require(\"stripe\")(\"sk_live_4eC39HqLyjWDarjtT1zdp7dc\");",
+      "category": "hardcoded_secret",
+      "severity": "critical",
+      "optional": false
+    },
+    {
+      "file": "src/orders.js",
+      "line": 8,
+      "span": [
+        8,
+        8
+      ],
+      "code": "const result = await pool.query(`SELECT * FROM orders WHERE id = ${req.params.id}`);",
+      "category": "injection",
+      "severity": "critical",
+      "optional": false
+    }
+  ]
+}

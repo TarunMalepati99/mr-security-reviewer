@@ -1,0 +1,14 @@
+{
+  "id": "c06",
+  "title": "Order lookup with ownership check",
+  "author": "benchmark",
+  "note": "Safe: authenticated and checks ownership.",
+  "expected_gate": "pass",
+  "changed_files": [
+    {
+      "path": "api/orders.py",
+      "diff": "+from flask import jsonify, abort\n+from flask_login import login_required, current_user\n+from models import Order\n+\n+@app.route(\"/orders/<int:order_id>\")\n+@login_required\n+def get_order(order_id):\n+    order = Order.query.get_or_404(order_id)\n+    if order.customer_id != current_user.id:\n+        abort(403)\n+    return jsonify(order.to_dict())\n"
+    }
+  ],
+  "labels": []
+}

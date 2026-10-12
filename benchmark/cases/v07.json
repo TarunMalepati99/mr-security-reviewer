@@ -1,0 +1,27 @@
+{
+  "id": "v07",
+  "title": "New card processor client",
+  "author": "benchmark",
+  "note": "HTTPS URL but TLS certificate verification disabled.",
+  "expected_gate": "warn",
+  "changed_files": [
+    {
+      "path": "payments/processor.py",
+      "diff": "+import requests\n+\n+PROCESSOR_URL = \"https://api.card-processor.example.com/v2/charge\"\n+\n+def charge(card_token, amount_cents):\n+    resp = requests.post(\n+        PROCESSOR_URL,\n+        json={\"token\": card_token, \"amount\": amount_cents},\n+        timeout=10,\n+        verify=False,\n+    )\n+    resp.raise_for_status()\n+    return resp.json()\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "payments/processor.py",
+      "line": 10,
+      "span": [
+        6,
+        10
+      ],
+      "code": "verify=False,",
+      "category": "insecure_transport",
+      "severity": "high",
+      "optional": false
+    }
+  ]
+}

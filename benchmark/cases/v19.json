@@ -1,0 +1,39 @@
+{
+  "id": "v19",
+  "title": "Nightly settlement file upload",
+  "author": "benchmark",
+  "note": "Hardcoded password and unencrypted FTP for cardholder settlement files.",
+  "expected_gate": "block",
+  "changed_files": [
+    {
+      "path": "jobs/upload.py",
+      "diff": "+from ftplib import FTP\n+\n+FTP_HOST = \"files.acquirer.example.com\"\n+FTP_USER = \"merchant_42\"\n+FTP_PASSWORD = \"Settle2024!\"\n+\n+def upload(path):\n+    with FTP(FTP_HOST) as ftp:\n+        ftp.login(FTP_USER, FTP_PASSWORD)\n+        with open(path, \"rb\") as f:\n+            ftp.storbinary(\"STOR settlement.csv\", f)\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "jobs/upload.py",
+      "line": 5,
+      "span": [
+        5,
+        5
+      ],
+      "code": "FTP_PASSWORD = \"Settle2024!\"",
+      "category": "hardcoded_secret",
+      "severity": "critical",
+      "optional": false
+    },
+    {
+      "file": "jobs/upload.py",
+      "line": 8,
+      "span": [
+        1,
+        11
+      ],
+      "code": "with FTP(FTP_HOST) as ftp:",
+      "category": "insecure_transport",
+      "severity": "high",
+      "optional": false
+    }
+  ]
+}

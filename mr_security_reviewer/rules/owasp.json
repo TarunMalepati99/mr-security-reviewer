@@ -1,0 +1,201 @@
+[
+  {
+    "rule_id": "OWASP-A01",
+    "title": "Broken Access Control",
+    "cwe": [
+      22,
+      23,
+      284,
+      285,
+      352,
+      601,
+      639,
+      862,
+      863
+    ],
+    "keywords": [
+      "route",
+      "endpoint",
+      "@app.route",
+      "permission",
+      "role",
+      "auth",
+      "open(",
+      "path",
+      "redirect",
+      "send_file"
+    ],
+    "text": "Enforce access control server-side on every request and deny by default. Covers missing authentication/authorization, insecure direct object references (acting on an id from the request without an ownership check), path traversal (user input reaching file paths), and open redirects to user-supplied URLs."
+  },
+  {
+    "rule_id": "OWASP-A02",
+    "title": "Cryptographic Failures",
+    "cwe": [
+      295,
+      319,
+      326,
+      327,
+      328,
+      330,
+      338,
+      916
+    ],
+    "keywords": [
+      "md5",
+      "sha1",
+      "hash",
+      "encrypt",
+      "cipher",
+      "random",
+      "http://",
+      "ssl",
+      "verify=false",
+      "crypto"
+    ],
+    "text": "Do not use broken or weak algorithms (MD5, SHA-1, DES, ECB mode) for security purposes, non-cryptographic random number generators for secrets or tokens, unsalted/fast hashes for passwords, plaintext transport of sensitive data, or disabled TLS certificate verification."
+  },
+  {
+    "rule_id": "OWASP-A03",
+    "title": "Injection",
+    "cwe": [
+      77,
+      78,
+      79,
+      89,
+      90,
+      94,
+      95,
+      643,
+      917
+    ],
+    "keywords": [
+      "sql",
+      "query",
+      "select",
+      "insert",
+      "update",
+      "delete",
+      "eval",
+      "exec",
+      "system",
+      "subprocess",
+      "shell",
+      "ldap",
+      "xpath",
+      "render",
+      "html",
+      "input"
+    ],
+    "text": "Untrusted input that reaches an interpreter without parameterization or proper escaping enables injection: SQL, OS command, code (eval/exec), LDAP, XPath, and cross-site scripting (user input written into HTML responses unescaped). Use parameterized APIs, argument lists, allow-lists and context-aware output encoding."
+  },
+  {
+    "rule_id": "OWASP-A04",
+    "title": "Insecure Design",
+    "cwe": [
+      501,
+      602,
+      807
+    ],
+    "keywords": [
+      "session",
+      "trust",
+      "header",
+      "client"
+    ],
+    "text": "Do not trust data across trust boundaries: untrusted request data must not be stored in trusted contexts such as the server-side session, and security decisions must not rely on client-controlled values (headers, hidden fields, cookies)."
+  },
+  {
+    "rule_id": "OWASP-A05",
+    "title": "Security Misconfiguration",
+    "cwe": [
+      16,
+      611,
+      614,
+      1004,
+      776
+    ],
+    "keywords": [
+      "xml",
+      "parser",
+      "etree",
+      "lxml",
+      "cookie",
+      "set_cookie",
+      "debug",
+      "config"
+    ],
+    "text": "Insecure defaults and configuration: XML parsers that resolve external entities (XXE), cookies holding sensitive values without the Secure/HttpOnly flags, debug mode or verbose errors in production."
+  },
+  {
+    "rule_id": "OWASP-A07",
+    "title": "Identification and Authentication Failures",
+    "cwe": [
+      259,
+      287,
+      384,
+      798
+    ],
+    "keywords": [
+      "password",
+      "login",
+      "token",
+      "jwt",
+      "secret",
+      "session"
+    ],
+    "text": "Authentication must not rely on hardcoded credentials or weak/unverified tokens; session identifiers must be protected and rotated."
+  },
+  {
+    "rule_id": "OWASP-A08",
+    "title": "Software and Data Integrity Failures",
+    "cwe": [
+      502,
+      345,
+      494
+    ],
+    "keywords": [
+      "pickle",
+      "yaml",
+      "marshal",
+      "deserialize",
+      "loads",
+      "jsonpickle",
+      "shelve"
+    ],
+    "text": "Never deserialize untrusted data with formats that can instantiate arbitrary objects (pickle, unsafe YAML loaders, marshal, jsonpickle). Verify integrity of data and code before use."
+  },
+  {
+    "rule_id": "OWASP-A09",
+    "title": "Security Logging and Monitoring Failures",
+    "cwe": [
+      117,
+      532,
+      778
+    ],
+    "keywords": [
+      "log",
+      "logger",
+      "print",
+      "card",
+      "cvv",
+      "password",
+      "token"
+    ],
+    "text": "Logging sensitive data (credentials, card numbers, tokens) in plaintext is itself a logging failure and a data-exposure risk; unsanitized user input in logs enables log injection."
+  },
+  {
+    "rule_id": "OWASP-A10",
+    "title": "Server-Side Request Forgery",
+    "cwe": [
+      918
+    ],
+    "keywords": [
+      "requests.get",
+      "urlopen",
+      "url",
+      "fetch",
+      "http"
+    ],
+    "text": "Requests to URLs built from user input let attackers reach internal services. Validate destinations against an allow-list."
+  }
+]

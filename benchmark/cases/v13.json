@@ -1,0 +1,27 @@
+{
+  "id": "v13",
+  "title": "Encrypt stored card numbers",
+  "author": "benchmark",
+  "note": "Key correctly from env (not a secret finding), but ECB mode for card data.",
+  "expected_gate": "warn",
+  "changed_files": [
+    {
+      "path": "vault/cards.py",
+      "diff": "+from Crypto.Cipher import AES\n+import os\n+\n+KEY = os.environ[\"CARD_VAULT_KEY\"].encode()\n+\n+def encrypt_pan(pan):\n+    cipher = AES.new(KEY, AES.MODE_ECB)\n+    padded = pan.ljust(32).encode()\n+    return cipher.encrypt(padded)\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "vault/cards.py",
+      "line": 7,
+      "span": [
+        7,
+        7
+      ],
+      "code": "cipher = AES.new(KEY, AES.MODE_ECB)",
+      "category": "weak_crypto",
+      "severity": "high",
+      "optional": false
+    }
+  ]
+}

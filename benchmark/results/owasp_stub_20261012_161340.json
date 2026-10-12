@@ -1,0 +1,2272 @@
+{
+  "summary": {
+    "cases": 140,
+    "real_vulnerable": 70,
+    "safe_lookalikes": 70,
+    "TP": 3,
+    "FP": 0,
+    "TN": 70,
+    "FN": 67,
+    "benchmark_score": 0.043,
+    "avg_tpr": 0.043,
+    "avg_fpr": 0.0,
+    "precision": 1.0,
+    "recall": 0.043,
+    "f1": 0.082,
+    "accuracy": 0.521,
+    "raw_candidate_findings": 62,
+    "dropped_as_hallucination": 0,
+    "per_category": {
+      "pathtraver": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 5,
+        "FN": 5,
+        "tpr": 0.0,
+        "fpr": 0.0,
+        "score": 0.0
+      },
+      "cmdi": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 5,
+        "FN": 5,
+        "tpr": 0.0,
+        "fpr": 0.0,
+        "score": 0.0
+      },
+      "codeinj": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 5,
+        "FN": 5,
+        "tpr": 0.0,
+        "fpr": 0.0,
+        "score": 0.0
+      },
+      "deserialization": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 5,
+        "FN": 5,
+        "tpr": 0.0,
+        "fpr": 0.0,
+        "score": 0.0
+      },
+      "hash": {
+        "TP": 3,
+        "FP": 0,
+        "TN": 5,
+        "FN": 2,
+        "tpr": 0.6,
+        "fpr": 0.0,
+        "score": 0.6
+      },
+      "ldapi": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 5,
+        "FN": 5,
+        "tpr": 0.0,
+        "fpr": 0.0,
+        "score": 0.0
+      },
+      "redirect": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 5,
+        "FN": 5,
+        "tpr": 0.0,
+        "fpr": 0.0,
+        "score": 0.0
+      },
+      "securecookie": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 5,
+        "FN": 5,
+        "tpr": 0.0,
+        "fpr": 0.0,
+        "score": 0.0
+      },
+      "sqli": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 5,
+        "FN": 5,
+        "tpr": 0.0,
+        "fpr": 0.0,
+        "score": 0.0
+      },
+      "trustbound": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 5,
+        "FN": 5,
+        "tpr": 0.0,
+        "fpr": 0.0,
+        "score": 0.0
+      },
+      "weakrand": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 5,
+        "FN": 5,
+        "tpr": 0.0,
+        "fpr": 0.0,
+        "score": 0.0
+      },
+      "xpathi": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 5,
+        "FN": 5,
+        "tpr": 0.0,
+        "fpr": 0.0,
+        "score": 0.0
+      },
+      "xss": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 5,
+        "FN": 5,
+        "tpr": 0.0,
+        "fpr": 0.0,
+        "score": 0.0
+      },
+      "xxe": {
+        "TP": 0,
+        "FP": 0,
+        "TN": 5,
+        "FN": 5,
+        "tpr": 0.0,
+        "fpr": 0.0,
+        "score": 0.0
+      }
+    },
+    "analyzer": "stub",
+    "model": "stub",
+    "suite": "owasp",
+    "partial": false,
+    "cases_with_errors": 0,
+    "seconds": 1.8,
+    "gemini_calls": 0,
+    "gemini_cached": 0,
+    "per_class": "5",
+    "seed": 7
+  },
+  "errors": [],
+  "cases": [
+    {
+      "id": "owasp-00012",
+      "test": "BenchmarkTest00012",
+      "category": "sqli",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00037",
+      "test": "BenchmarkTest00037",
+      "category": "weakrand",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00065",
+      "test": "BenchmarkTest00065",
+      "category": "securecookie",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00068",
+      "test": "BenchmarkTest00068",
+      "category": "redirect",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00070",
+      "test": "BenchmarkTest00070",
+      "category": "trustbound",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00076",
+      "test": "BenchmarkTest00076",
+      "category": "ldapi",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00077",
+      "test": "BenchmarkTest00077",
+      "category": "ldapi",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00081",
+      "test": "BenchmarkTest00081",
+      "category": "deserialization",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00099",
+      "test": "BenchmarkTest00099",
+      "category": "sqli",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00099', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00107",
+      "test": "BenchmarkTest00107",
+      "category": "xpathi",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00107', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00114",
+      "test": "BenchmarkTest00114",
+      "category": "weakrand",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00114', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00152",
+      "test": "BenchmarkTest00152",
+      "category": "trustbound",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00152', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00156",
+      "test": "BenchmarkTest00156",
+      "category": "codeinj",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00156', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00160",
+      "test": "BenchmarkTest00160",
+      "category": "codeinj",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00160', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00162",
+      "test": "BenchmarkTest00162",
+      "category": "codeinj",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00162', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00165",
+      "test": "BenchmarkTest00165",
+      "category": "cmdi",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00165', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00166",
+      "test": "BenchmarkTest00166",
+      "category": "cmdi",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00166', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00173",
+      "test": "BenchmarkTest00173",
+      "category": "pathtraver",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00173', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00191",
+      "test": "BenchmarkTest00191",
+      "category": "xss",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00191', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00207",
+      "test": "BenchmarkTest00207",
+      "category": "xpathi",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00207', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00221",
+      "test": "BenchmarkTest00221",
+      "category": "weakrand",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00221', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00250",
+      "test": "BenchmarkTest00250",
+      "category": "hash",
+      "real": true,
+      "flagged": true,
+      "outcome": "TP",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "OWASP-A02",
+          "cwe": 328,
+          "severity": "high",
+          "evidence": "hash = hashlib.sha1()"
+        },
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00250', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 2,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00251",
+      "test": "BenchmarkTest00251",
+      "category": "hash",
+      "real": true,
+      "flagged": true,
+      "outcome": "TP",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "OWASP-A02",
+          "cwe": 328,
+          "severity": "high",
+          "evidence": "hash = hashlib.sha1()"
+        },
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00251', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 2,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00254",
+      "test": "BenchmarkTest00254",
+      "category": "hash",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00254', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00268",
+      "test": "BenchmarkTest00268",
+      "category": "cmdi",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00268', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00269",
+      "test": "BenchmarkTest00269",
+      "category": "deserialization",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00269', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00271",
+      "test": "BenchmarkTest00271",
+      "category": "deserialization",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00271', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00278",
+      "test": "BenchmarkTest00278",
+      "category": "xss",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00283",
+      "test": "BenchmarkTest00283",
+      "category": "sqli",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00284",
+      "test": "BenchmarkTest00284",
+      "category": "sqli",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00286",
+      "test": "BenchmarkTest00286",
+      "category": "sqli",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00292",
+      "test": "BenchmarkTest00292",
+      "category": "xxe",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00294",
+      "test": "BenchmarkTest00294",
+      "category": "xxe",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00299",
+      "test": "BenchmarkTest00299",
+      "category": "xpathi",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00305",
+      "test": "BenchmarkTest00305",
+      "category": "weakrand",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00350",
+      "test": "BenchmarkTest00350",
+      "category": "cmdi",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00364",
+      "test": "BenchmarkTest00364",
+      "category": "xss",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00364', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00374",
+      "test": "BenchmarkTest00374",
+      "category": "xpathi",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00374', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00405",
+      "test": "BenchmarkTest00405",
+      "category": "weakrand",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00405', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00407",
+      "test": "BenchmarkTest00407",
+      "category": "weakrand",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00407', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00409",
+      "test": "BenchmarkTest00409",
+      "category": "hash",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00409', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00410",
+      "test": "BenchmarkTest00410",
+      "category": "hash",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00410', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00415",
+      "test": "BenchmarkTest00415",
+      "category": "securecookie",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00415', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00416",
+      "test": "BenchmarkTest00416",
+      "category": "securecookie",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00416', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00421",
+      "test": "BenchmarkTest00421",
+      "category": "trustbound",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00421', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00423",
+      "test": "BenchmarkTest00423",
+      "category": "codeinj",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00423', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00425",
+      "test": "BenchmarkTest00425",
+      "category": "codeinj",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00425', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00433",
+      "test": "BenchmarkTest00433",
+      "category": "deserialization",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00433', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00444",
+      "test": "BenchmarkTest00444",
+      "category": "pathtraver",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00450",
+      "test": "BenchmarkTest00450",
+      "category": "xss",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00454",
+      "test": "BenchmarkTest00454",
+      "category": "sqli",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00455",
+      "test": "BenchmarkTest00455",
+      "category": "sqli",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00461",
+      "test": "BenchmarkTest00461",
+      "category": "xxe",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00464",
+      "test": "BenchmarkTest00464",
+      "category": "xpathi",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00494",
+      "test": "BenchmarkTest00494",
+      "category": "securecookie",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00495",
+      "test": "BenchmarkTest00495",
+      "category": "redirect",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00497",
+      "test": "BenchmarkTest00497",
+      "category": "trustbound",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00502",
+      "test": "BenchmarkTest00502",
+      "category": "trustbound",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00506",
+      "test": "BenchmarkTest00506",
+      "category": "ldapi",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00508",
+      "test": "BenchmarkTest00508",
+      "category": "deserialization",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00510",
+      "test": "BenchmarkTest00510",
+      "category": "deserialization",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00511",
+      "test": "BenchmarkTest00511",
+      "category": "cmdi",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00512",
+      "test": "BenchmarkTest00512",
+      "category": "cmdi",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00520",
+      "test": "BenchmarkTest00520",
+      "category": "pathtraver",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00531",
+      "test": "BenchmarkTest00531",
+      "category": "xss",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00534",
+      "test": "BenchmarkTest00534",
+      "category": "xpathi",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00541",
+      "test": "BenchmarkTest00541",
+      "category": "xxe",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00542",
+      "test": "BenchmarkTest00542",
+      "category": "xpathi",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00553",
+      "test": "BenchmarkTest00553",
+      "category": "xpathi",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00604",
+      "test": "BenchmarkTest00604",
+      "category": "ldapi",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00606",
+      "test": "BenchmarkTest00606",
+      "category": "cmdi",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00610",
+      "test": "BenchmarkTest00610",
+      "category": "pathtraver",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00635",
+      "test": "BenchmarkTest00635",
+      "category": "weakrand",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00649",
+      "test": "BenchmarkTest00649",
+      "category": "hash",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00653",
+      "test": "BenchmarkTest00653",
+      "category": "securecookie",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00654",
+      "test": "BenchmarkTest00654",
+      "category": "redirect",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00659",
+      "test": "BenchmarkTest00659",
+      "category": "deserialization",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00662",
+      "test": "BenchmarkTest00662",
+      "category": "pathtraver",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00662', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00668",
+      "test": "BenchmarkTest00668",
+      "category": "xss",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00668', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00678",
+      "test": "BenchmarkTest00678",
+      "category": "xxe",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00678', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00679",
+      "test": "BenchmarkTest00679",
+      "category": "xxe",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00679', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00715",
+      "test": "BenchmarkTest00715",
+      "category": "hash",
+      "real": true,
+      "flagged": true,
+      "outcome": "TP",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "OWASP-A02",
+          "cwe": 328,
+          "severity": "high",
+          "evidence": "hash = hashlib.sha1()"
+        },
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00715', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 2,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00721",
+      "test": "BenchmarkTest00721",
+      "category": "securecookie",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00721', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00723",
+      "test": "BenchmarkTest00723",
+      "category": "redirect",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00723', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00724",
+      "test": "BenchmarkTest00724",
+      "category": "redirect",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00724', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00725",
+      "test": "BenchmarkTest00725",
+      "category": "trustbound",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00725', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00731",
+      "test": "BenchmarkTest00731",
+      "category": "ldapi",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00731', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00734",
+      "test": "BenchmarkTest00734",
+      "category": "deserialization",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00734', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00736",
+      "test": "BenchmarkTest00736",
+      "category": "cmdi",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00736', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00743",
+      "test": "BenchmarkTest00743",
+      "category": "pathtraver",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00743', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00744",
+      "test": "BenchmarkTest00744",
+      "category": "pathtraver",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00744', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00750",
+      "test": "BenchmarkTest00750",
+      "category": "pathtraver",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00750', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00755",
+      "test": "BenchmarkTest00755",
+      "category": "sqli",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00755', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00756",
+      "test": "BenchmarkTest00756",
+      "category": "xpathi",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00756', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00759",
+      "test": "BenchmarkTest00759",
+      "category": "xxe",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00759', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00773",
+      "test": "BenchmarkTest00773",
+      "category": "weakrand",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00773', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00808",
+      "test": "BenchmarkTest00808",
+      "category": "securecookie",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00808', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00810",
+      "test": "BenchmarkTest00810",
+      "category": "securecookie",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00810', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00814",
+      "test": "BenchmarkTest00814",
+      "category": "redirect",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00814', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00819",
+      "test": "BenchmarkTest00819",
+      "category": "codeinj",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00819', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00823",
+      "test": "BenchmarkTest00823",
+      "category": "ldapi",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler00823', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00842",
+      "test": "BenchmarkTest00842",
+      "category": "xss",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00886",
+      "test": "BenchmarkTest00886",
+      "category": "securecookie",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00887",
+      "test": "BenchmarkTest00887",
+      "category": "trustbound",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00900",
+      "test": "BenchmarkTest00900",
+      "category": "cmdi",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00905",
+      "test": "BenchmarkTest00905",
+      "category": "xss",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00917",
+      "test": "BenchmarkTest00917",
+      "category": "pathtraver",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00923",
+      "test": "BenchmarkTest00923",
+      "category": "xss",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00930",
+      "test": "BenchmarkTest00930",
+      "category": "xxe",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00931",
+      "test": "BenchmarkTest00931",
+      "category": "xxe",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00942",
+      "test": "BenchmarkTest00942",
+      "category": "xpathi",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00954",
+      "test": "BenchmarkTest00954",
+      "category": "weakrand",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00984",
+      "test": "BenchmarkTest00984",
+      "category": "trustbound",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00986",
+      "test": "BenchmarkTest00986",
+      "category": "codeinj",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00988",
+      "test": "BenchmarkTest00988",
+      "category": "codeinj",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-00998",
+      "test": "BenchmarkTest00998",
+      "category": "deserialization",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01021",
+      "test": "BenchmarkTest01021",
+      "category": "sqli",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01040",
+      "test": "BenchmarkTest01040",
+      "category": "weakrand",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01079",
+      "test": "BenchmarkTest01079",
+      "category": "hash",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01081",
+      "test": "BenchmarkTest01081",
+      "category": "hash",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01088",
+      "test": "BenchmarkTest01088",
+      "category": "securecookie",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01094",
+      "test": "BenchmarkTest01094",
+      "category": "trustbound",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01095",
+      "test": "BenchmarkTest01095",
+      "category": "ldapi",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01097",
+      "test": "BenchmarkTest01097",
+      "category": "cmdi",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01151",
+      "test": "BenchmarkTest01151",
+      "category": "hash",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01156",
+      "test": "BenchmarkTest01156",
+      "category": "redirect",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01157",
+      "test": "BenchmarkTest01157",
+      "category": "redirect",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01159",
+      "test": "BenchmarkTest01159",
+      "category": "redirect",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01163",
+      "test": "BenchmarkTest01163",
+      "category": "trustbound",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01167",
+      "test": "BenchmarkTest01167",
+      "category": "codeinj",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01168",
+      "test": "BenchmarkTest01168",
+      "category": "ldapi",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01170",
+      "test": "BenchmarkTest01170",
+      "category": "ldapi",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01178",
+      "test": "BenchmarkTest01178",
+      "category": "redirect",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01188",
+      "test": "BenchmarkTest01188",
+      "category": "codeinj",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler01188', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01200",
+      "test": "BenchmarkTest01200",
+      "category": "ldapi",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01202",
+      "test": "BenchmarkTest01202",
+      "category": "pathtraver",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler01202', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01203",
+      "test": "BenchmarkTest01203",
+      "category": "sqli",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler01203', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01212",
+      "test": "BenchmarkTest01212",
+      "category": "xxe",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 1,
+      "findings": [
+        {
+          "rule_id": "SOC2-CC6.1",
+          "cwe": 862,
+          "severity": "medium",
+          "evidence": "@app.route('/benchmark/app/Handler01212', methods=['POST'])"
+        }
+      ],
+      "raw_findings": 1,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01216",
+      "test": "BenchmarkTest01216",
+      "category": "deserialization",
+      "real": true,
+      "flagged": false,
+      "outcome": "FN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    },
+    {
+      "id": "owasp-01223",
+      "test": "BenchmarkTest01223",
+      "category": "xss",
+      "real": false,
+      "flagged": false,
+      "outcome": "TN",
+      "other_findings": 0,
+      "findings": [],
+      "raw_findings": 0,
+      "dropped_as_hallucination": 0
+    }
+  ]
+}

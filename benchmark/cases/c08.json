@@ -1,0 +1,14 @@
+{
+  "id": "c08",
+  "title": "Report export without shell",
+  "author": "benchmark",
+  "note": "Safe: argument list (no shell), input validated, auth required.",
+  "expected_gate": "pass",
+  "changed_files": [
+    {
+      "path": "reports/export.py",
+      "diff": "+import re\n+import subprocess\n+from flask import request, abort\n+\n+SAFE_NAME = re.compile(r\"^[a-zA-Z0-9_-]{1,64}$\")\n+\n+@app.route(\"/reports/export\")\n+@login_required\n+def export_report():\n+    name = request.args.get(\"name\", \"\")\n+    if not SAFE_NAME.match(name):\n+        abort(400)\n+    subprocess.run([\"tar\", \"-czf\", \"/tmp/export.tgz\", f\"/data/reports/{name}\"], check=True)\n+    return \"ok\"\n"
+    }
+  ],
+  "labels": []
+}

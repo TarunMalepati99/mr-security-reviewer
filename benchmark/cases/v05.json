@@ -1,0 +1,27 @@
+{
+  "id": "v05",
+  "title": "JWT session tokens",
+  "author": "benchmark",
+  "note": "Hardcoded JWT signing key with a name the simple regex doesn't cover.",
+  "expected_gate": "block",
+  "changed_files": [
+    {
+      "path": "auth/tokens.py",
+      "diff": "+import jwt\n+import datetime\n+\n+JWT_SIGNING_KEY = \"my-very-secret-signing-key-2024\"\n+\n+def issue_token(user_id):\n+    payload = {\"sub\": user_id, \"exp\": datetime.datetime.utcnow() + datetime.timedelta(hours=8)}\n+    return jwt.encode(payload, JWT_SIGNING_KEY, algorithm=\"HS256\")\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "auth/tokens.py",
+      "line": 4,
+      "span": [
+        4,
+        4
+      ],
+      "code": "JWT_SIGNING_KEY = \"my-very-secret-signing-key-2024\"",
+      "category": "hardcoded_secret",
+      "severity": "critical",
+      "optional": false
+    }
+  ]
+}

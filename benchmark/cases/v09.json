@@ -1,0 +1,27 @@
+{
+  "id": "v09",
+  "title": "Admin user deletion",
+  "author": "benchmark",
+  "note": "Destructive admin endpoint with no authentication at all.",
+  "expected_gate": "warn",
+  "changed_files": [
+    {
+      "path": "api/admin.py",
+      "diff": "+from flask import request, jsonify\n+from models import User, db\n+\n+@app.route(\"/admin/users/delete\", methods=[\"POST\"])\n+def delete_user():\n+    user_id = request.json[\"user_id\"]\n+    User.query.filter_by(id=user_id).delete()\n+    db.session.commit()\n+    return jsonify({\"deleted\": user_id})\n"
+    }
+  ],
+  "labels": [
+    {
+      "file": "api/admin.py",
+      "line": 4,
+      "span": [
+        4,
+        4
+      ],
+      "code": "@app.route(\"/admin/users/delete\", methods=[\"POST\"])",
+      "category": "broken_access_control",
+      "severity": "high",
+      "optional": false
+    }
+  ]
+}
